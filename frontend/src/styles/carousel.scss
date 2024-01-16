@@ -1,23 +1,17 @@
 .carousel {
-    .sliderStyles {
-      position: relative;
-      height: 500px;;
-    }
-    .containerStyles {
-      width: 500px;
-      height: 280px;
-      margin: 0 auto;
-    }
-  
-    .slideStyles {
+  position: relative;
+  height: 100%;
+
+  .slideStyles {
+    position:relative;
       width: 100%;
-      height: 100%;
+      height: 500px;
       border-radius: 10px;
       background-size: cover;
       background-position: center;
-    }
-  
-    .rightArrowStyles {
+  }
+
+  .rightArrowStyles {
       position: absolute;
       top: 50%;
       transform: translate(0, -50%);
@@ -26,27 +20,35 @@
       color: #fff;
       z-index: 1;
       cursor: pointer;
-    }
-  
-    .leftArrowStyles {
+  }
+
+  .leftArrowStyles {
       @extend .rightArrowStyles;
       left: 32px;
       right: auto;
-    }
-  
-    .dotsContainerStyles {
+  }
+
+  .dotsContainerStyles {
       display: flex;
       justify-content: center;
-    }
-  
-    .dotStyle {
+  }
+
+  .dotStyle {
       margin: 0 3px;
       cursor: pointer;
       font-size: 20px;
-    }
-    .containerStyles {
-        width: 600px;
-        height: 600px;
-        margin: 0 auto;
-      }
+      color:#ccc;
   }
+  .activeDot {
+    color: #000; // Color for active dot
+  }
+
+  .containerStyles {
+      width: 600px;
+      height: 600px;
+      margin: 0 auto;
+  }
+
+
+
+}

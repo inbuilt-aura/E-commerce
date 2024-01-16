@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import {
   FaSearch,
   FaShoppingBag,
@@ -7,13 +7,18 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 import { useState } from "react";
-const user = {_id: "sdjsdh", role: "admin"}
+const user = {_id: "aman", role: "user"}
 
 const Header = () => {
 const [isOpen,setIsOpen] = useState<boolean>(false);
 
+const navigate = useNavigate();
+
   const logoutHandler = () => {
     setIsOpen(false);
+   
+
+    navigate('/login');
   }
 return (
   <nav className="header">
@@ -29,21 +34,21 @@ return (
 
       {user?._id ? (
         <>
-          <button onClick={() => setIsOpen ((prev) => !prev)}>
+          <button onClick={() => setIsOpen((prev) => !prev)}>
             <FaUser />
           </button>
-          <dialog open={isOpen} >
+          <dialog open={isOpen}>
             <div>
               {user.role === "admin" && (
-                <Link to="/admin/dashboard">
+                <Link onClick={() => setIsOpen(false)} to="/admin/dashboard">
                   Admin
                 </Link>
               )}
 
-              <Link onClick= {() => setIsOpen(false)} to="/orders">
+              <Link onClick={() => setIsOpen(false)} to="/orders">
                 Orders
               </Link>
-              <button onClickCapture={logoutHandler}>
+              <button onClick={logoutHandler}>
                 <FaSignOutAlt />
               </button>
             </div>

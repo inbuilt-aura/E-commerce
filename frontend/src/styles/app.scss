@@ -33,8 +33,12 @@ a {
 }
 
 @import "admin/mixin";
-@import "home";
+@import "home.scss";
 @import "carousel";
+@import "cart.scss";
+@import "login.scss";
+@import "search.scss";
+@import "shipping.scss";
 @import "admin/dashboard";
 @import "admin/products";
 @import "admin/chart";
